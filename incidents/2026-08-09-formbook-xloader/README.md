@@ -24,6 +24,7 @@ ATTENTION: L'énoncé indique que le contrôleur de domaine est 172.16.8[.]2, ma
 Filtre : `ip.addr == 146.59.71.167 && http.request`
 
 
+
 ### Quelle est son adresse MAC ?
 
 ![Adresse MAC](img/03-mac.png)
@@ -32,6 +33,7 @@ Filtre : `ip.addr == 146.59.71.167 && http.request`
 **Réponse :** 00:12:f0:28:d4:34, il suffit de regarder la couche Ethernet d'un paquet émis par le poste.<br>
 
 Filtre : `ip.src == 172.16.8.49`
+
 
 
 ### Quel est son nom d'hôte ?
@@ -44,6 +46,7 @@ Filtre : `ip.src == 172.16.8.49`
 Filtre : `ip.addr == 172.16.8.49 && nbns`
 
 
+
 ### Quel est le compte utilisateur ?
 
 ![Compte utilisateur](img/05-compte-kerberos.png)
@@ -54,6 +57,7 @@ Filtre : `ip.addr == 172.16.8.49 && nbns`
 Filtre : `ip.addr == 172.16.8.49 && kerberos.CNameString`
 
 
+
 ### Quel est le nom complet de l'utilisateur ?
 
 ![Nom complet](img/06-nom-complet-samr.png)
@@ -62,6 +66,7 @@ Filtre : `ip.addr == 172.16.8.49 && kerberos.CNameString`
 **Réponse :** Raymond Vance, dans la réponse SAMR `QueryUserInfo` du contrôleur de domaine.<br>
 
 Filtre : `ip.addr == 172.16.8.49 && samr`
+
 
 
 ## Comportement du malware
