@@ -77,12 +77,12 @@ Domaines contactés (hors leurre) : grinswakebthu[.]info, taibeinan[.]cc, legend
 
 ## Recommandations
 
+- Informer l'utilisateur Raymond Vance que son poste a été infecté.
 - Isoler DESKTOP-5NLV63K et le réinstaller.
-- Réinitialiser les mots de passe de rvance, ainsi que ceux enregistrés sur le poste : FormBook vole les identifiants.
-- Bloquer les domaines ci-dessus sur le proxy et le DNS.
+- Réinitialiser les mots de passe du compte rvance.
+- Black-lister les domaines ci-dessus.
 
 ## Ce que j'ai appris
 
-- Partir de l'IP de l'alerte donne le poste infecté en un filtre. Et il faut vérifier l'énoncé : le contrôleur de domaine annoncé n'était pas le bon.
-- Quand une information n'est pas là où on l'attend (le nom complet n'était pas dans LDAP), chercher une donnée connue (le login) dans les octets des paquets permet de trouver le bon protocole (SAMR).
+- Il est important de partir de l'IP de l'alerte pour canaliser ses recherches.
 - Un code « 200 OK » ne suffit pas : il faut lire le contenu de la réponse.
