@@ -3,11 +3,11 @@
 **Exercice :** [Malware-Traffic-Analysis.net, 2026-08-09 « First to Last »](https://www.malware-traffic-analysis.net/2026/08/09/index.html)
 **Outils :** Wireshark, CyberChef, VirusTotal
 
-> Mes captures Wireshark affichent l'heure locale (UTC+2).
+> Attention: Mes captures Wireshark affichent l'heure locale (UTC+2).
 
 ## Contexte
 
-Je remplace un analyste SOC. L'IDS remonte des alertes `ET MALWARE FormBook CnC Checkin (GET)` à partir de 02:13 UTC, vers plusieurs IP externes. Avec la capture réseau, je dois retrouver le poste infecté et son utilisateur.
+L'IDS remonte des alertes `ET MALWARE FormBook CnC Checkin (GET)` à partir de 02:13 UTC, vers plusieurs IP externes. Avec la capture réseau, je dois retrouver le poste infecté et son utilisateur.
 
 Réseau : 172.16.8[.]0/24, domaine `firsttolast[.]tech`. L'énoncé donne le contrôleur de domaine en 172.16.8[.]2, mais dans le trafic, c'est 172.16.8[.]8 qui répond (DNS, Kerberos, SMB).
 
