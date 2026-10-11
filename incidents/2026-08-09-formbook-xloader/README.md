@@ -3,7 +3,7 @@
 **Exercice :** [Malware-Traffic-Analysis.net, 2026-08-09 « First to Last »](https://www.malware-traffic-analysis.net/2026/08/09/index.html)
 **Outils :** Wireshark, CyberChef, VirusTotal
 
-> Les indicateurs sont neutralisés (`[.]`). Les heures sont en UTC ; mes captures Wireshark affichent l'heure locale (UTC+2).
+> Mes captures Wireshark affichent l'heure locale (UTC+2).
 
 ## Contexte
 
