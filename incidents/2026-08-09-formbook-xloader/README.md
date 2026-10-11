@@ -64,7 +64,7 @@ Filtre : `ip.addr == 172.16.8.49 && samr`
 
 - **Vecteur d'infection non visible** : la capture commence à 02:07. Jusqu'à 02:13, on ne voit que du trafic légitime. La capture ne montre que la phase Command and Control de l'attaque.
 - **Rotation de domaines** : à partir de 02:13, le poste contacte 16 domaines l'un après l'autre. 14 d'entre eux reçoivent 7 requêtes POST puis 1 GET (`/xxxx/?2kn1=...`)
-- **Domaines leurres** : la liste commence avec un vrai site (www.independent[.]ie, un journal irlandais légitime). Le C2 fait tourner des URL leurres qui renvoient des erreurs (301, 403, 404, 500…). Seule l'URL www.taibeinan[.]cc, se traduit par un « 200 OK » mais la page renvoyé est un 404. Au final, le vrai C2 n'est pas identifiable sur la capture.
+- **Domaines leurres** : la liste commence avec un vrai site (www.independent[.]ie, un journal irlandais légitime). Le C2 fait tourner des URL leurres qui renvoient des erreurs (301, 403, 404, 500…). Seule l'URL www.taibeinan[.]cc se traduit par un « 200 OK », mais la page renvoyée est un 404. Au final, le vrai C2 n'est pas identifiable sur la capture.
 - **Données chiffrées** : les données sont en Base64. Une fois décodées, leur entropie est de 7,93 sur 8 ce qui indique que les données sont chiffrées.
 
 ![Requête POST vers un domaine de la rotation](img/07-c2-post.png)
