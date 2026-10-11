@@ -8,7 +8,7 @@ Les analyses portent sur des environnements d'exercice publics. Les indicateurs 
 
 | Date | Analyse | Outils | Thèmes |
 | --- | --- | --- | --- |
-| 2026-08 | FormBook : identification d'un poste infecté à partir d'alertes IDS (en cours) | Wireshark | pcap, Active Directory, C2 HTTP |
+| 2026-08 | [FormBook / XLoader : identification d'un poste infecté à partir d'alertes IDS](incidents/2026-08-09-formbook-xloader/) | Wireshark, CyberChef | pcap, Active Directory, C2 HTTP, domaines leurres |
 
 ## Méthode
 
