@@ -11,21 +11,44 @@ Je remplace un analyste SOC. L'IDS remonte des alertes `ET MALWARE FormBook CnC 
 
 Réseau : 172.16.8[.]0/24, domaine `firsttolast[.]tech`. L'énoncé donne le contrôleur de domaine en 172.16.8[.]2, mais dans le trafic, c'est 172.16.8[.]8 qui répond (DNS, Kerberos, SMB).
 
+![Énoncé de l'exercice](img/01-enonce.png)
+
 ## Poste infecté
 
-| Élément | Réponse | Filtre Wireshark |
-| --- | --- | --- |
-| IP | 172.16.8[.]49 | `ip.addr == 146.59.71.167 && http.request` (qui parle à l'IP de l'alerte) |
-| MAC | 00:12:f0:28:d4:34 | `ip.src == 172.16.8.49`, couche Ethernet |
-| Nom d'hôte | DESKTOP-5NLV63K | `ip.addr == 172.16.8.49 && nbns` |
-| Compte | rvance | `ip.addr == 172.16.8.49 && kerberos.CNameString` |
-| Nom complet | Raymond Vance | `ip.addr == 172.16.8.49 && samr` (réponse `QueryUserInfo`) |
+### Quelle est l'adresse IP du poste infecté ?
 
 ![Trafic vers une IP de l'alerte](img/02-trafic-c2.png)
+
+**Réponse :** 172.16.8[.]49. C'est l'hôte qui envoie les requêtes HTTP vers l'IP de l'alerte.<br>
+Filtre : `ip.addr == 146.59.71.167 && http.request`
+
+### Quelle est son adresse MAC ?
+
 ![Adresse MAC](img/03-mac.png)
+
+**Réponse :** 00:12:f0:28:d4:34, dans la couche Ethernet d'un paquet émis par le poste.<br>
+Filtre : `ip.src == 172.16.8.49`
+
+### Quel est son nom d'hôte ?
+
 ![Nom d'hôte](img/04-hostname-nbns.png)
+
+**Réponse :** DESKTOP-5NLV63K, dans l'enregistrement NetBIOS du poste.<br>
+Filtre : `ip.addr == 172.16.8.49 && nbns`
+
+### Quel est le compte utilisateur ?
+
 ![Compte utilisateur](img/05-compte-kerberos.png)
+
+**Réponse :** rvance, dans les échanges Kerberos avec le contrôleur de domaine.<br>
+Filtre : `ip.addr == 172.16.8.49 && kerberos.CNameString`
+
+### Quel est le nom complet de l'utilisateur ?
+
 ![Nom complet](img/06-nom-complet-samr.png)
+
+**Réponse :** Raymond Vance, dans la réponse SAMR `QueryUserInfo` du contrôleur de domaine.<br>
+Filtre : `ip.addr == 172.16.8.49 && samr`
 
 ## Comportement du malware
 
