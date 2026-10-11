@@ -1,13 +1,12 @@
 # FormBook / XLoader : identifier un poste infecté à partir d'alertes IDS
 
 **Exercice :** [Malware-Traffic-Analysis.net, 2026-08-09 « First to Last »](https://www.malware-traffic-analysis.net/2026/08/09/index.html)
-**Outils :** Wireshark, CyberChef, VirusTotal
 
-> Attention: Mes captures Wireshark affichent l'heure locale (UTC+2).
+**Outils :** Wireshark, CyberChef, VirusTotal
 
 ## Contexte
 
-L'IDS remonte des alertes `ET MALWARE FormBook CnC Checkin (GET)` à partir de 02:13 UTC, vers plusieurs IP externes. Avec la capture réseau, je dois retrouver le poste infecté et son utilisateur.
+L'IDS remonte des alertes `ET MALWARE FormBook CnC Checkin (GET)` à partir de 02:13 UTC (Attention: Mes captures Wireshark affichent l'heure locale (UTC+2)), vers plusieurs IP externes.
 
 Réseau : 172.16.8[.]0/24, domaine `firsttolast[.]tech`. L'énoncé donne le contrôleur de domaine en 172.16.8[.]2, mais dans le trafic, c'est 172.16.8[.]8 qui répond (DNS, Kerberos, SMB).
 
@@ -19,7 +18,9 @@ Réseau : 172.16.8[.]0/24, domaine `firsttolast[.]tech`. L'énoncé donne le con
 
 ![Trafic vers une IP de l'alerte](img/02-trafic-c2.png)
 
+
 **Réponse :** 172.16.8[.]49. C'est l'hôte qui envoie les requêtes HTTP vers l'IP de l'alerte.<br>
+
 Filtre : `ip.addr == 146.59.71.167 && http.request`
 
 ### Quelle est son adresse MAC ?
