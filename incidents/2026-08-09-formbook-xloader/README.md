@@ -69,6 +69,8 @@ Filtre : `ip.addr == 172.16.8.49 && samr`
 
 ![Requête POST vers un domaine de la rotation](img/07-c2-post.png)
 
+![Entropie des données après décodage Base64 (CyberChef)](img/08-entropie.png)
+
 Domaines contactés (hors leurre) : grinswakebthu[.]info, taibeinan[.]cc, legenda-sochi[.]com, titanium303[.]com, 21207628[.]shop, vjscloudjsns[.]beer, kentmediallc[.]com, earthframe[.]site, p3x63q[.]garden, z61gqw[.]beer, www-bet456[.]co, moxom[.]online, thvwzs[.]com, devinnovationhab[.]team, amlgames[.]site
 
 ## Recommandations
