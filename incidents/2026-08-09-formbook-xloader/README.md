@@ -8,7 +8,8 @@
 
 L'IDS remonte des alertes `ET MALWARE FormBook CnC Checkin (GET)` vers plusieurs IP externes, à partir de 02:13 UTC (Attention: Mes captures Wireshark affichent l'heure locale (UTC+2)).
 
-ATTENTION: L'énoncé indique que le contrôleur de domaine est 172.16.8[.]2, mais dans la capture de trafic, c'est 172.16.8[.]8 qui répond aux requêtes SMB,DNS... 
+> [!NOTE]
+> Dans la capture, le contrôleur de domaine est 172.16.8[.]8 (et non 172.16.8[.]2 comme indiqué dans l'énoncé).
 
 ![Énoncé de l'exercice](img/01-enonce.png)
 
