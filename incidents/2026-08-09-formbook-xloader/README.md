@@ -17,7 +17,7 @@ ATTENTION: L'énoncé indique que le contrôleur de domaine est 172.16.8[.]2, ma
 ### Quelle est l'adresse IP du poste infecté ?
 
 ![Trafic vers une IP de l'alerte](img/02-trafic-c2.png)
-**Réponse :** 172.16.8[.]49. L'idée est de partir des IP issus de l'alerte pour identifier l'adresse IP du poste infecté.<br>
+**Réponse :** 172.16.8[.]49. Partir de l'IP issus de l'alerte pour identifier l'adresse IP du poste infecté.<br>
 
 Filtre : `ip.addr == 146.59.71.167 && http.request`
 
