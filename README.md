@@ -18,5 +18,5 @@ Ce portfolio a pour but de mettre en oeuvre les connaissances acquises lors de m
 
 | Date | Playbook | Modèle | Lien |
 | --- | --- | --- | ---|
-| 2026-10-10 | [Réponse à une infection ClickFix](playbooks/clickfix/) | fiches IRM, 6 étapes | s'appuie sur le triage Kongtuke |
+| 2026-10-10 | [Réponse à une infection ClickFix](playbooks/clickfix/) | fiches IRM | s'appuie sur le triage Kongtuke |
 
