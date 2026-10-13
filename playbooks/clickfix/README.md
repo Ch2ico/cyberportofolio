@@ -4,10 +4,6 @@ Ce playbook suit le modèle: "IRM (CERT-SG / CERT Advens)"
 
 ---
 
-## En-tête
-
-| | |
-| --- | --- |
 | **Menace** | ClickFix : l'utilisateur exécute lui-même une commande malveillante copiée depuis une fausse page web |
 | **Version** | 1.0, 2026-10-13 |
 
