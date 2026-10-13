@@ -6,17 +6,17 @@ Ce portfolio a pour but de mettre en oeuvre les connaissances acquises lors de m
 
 | Date | Analyse | Outils | Thèmes |
 | --- | --- | --- | --- |
-| 2026-08 | [FormBook / XLoader : identification d'un poste infecté à partir d'alertes IDS](incidents/2026-08-09-formbook-xloader/) | Wireshark, CyberChef | pcap, Active Directory, C2 HTTP, domaines leurres |
+| 2026-10-08 | [FormBook / XLoader : identification d'un poste infecté à partir d'alertes IDS](incidents/2026-08-09-formbook-xloader/) | Wireshark, CyberChef | pcap, Active Directory, C2 HTTP, domaines leurres |
 
 ## Triage de malware
 
 | Date | Analyse | Outils | Thèmes |
 | --- | --- | --- | --- |
-| 2026-09 | [Kongtuke / ClickFix : triage d'un poste infecté](malware/2026-09-11-kongtuke-clickfix/) | terminal Linux, VirusTotal | ClickFix, persistance registre, DLL side-loading |
+| 2026-10-09 | [Kongtuke / ClickFix : triage d'un poste infecté](malware/2026-09-11-kongtuke-clickfix/) | terminal Linux, VirusTotal | ClickFix, persistance registre, DLL side-loading |
 
 ## Playbooks
 
-| Playbook | Modèle | Lien |
-| --- | --- | --- |
-| [Réponse à une infection ClickFix](playbooks/clickfix/) | fiches IRM, 6 étapes | s'appuie sur le triage Kongtuke |
+| Date | Playbook | Modèle | Lien |
+| --- | --- | --- | ---|
+| 2026-10-10 | [Réponse à une infection ClickFix](playbooks/clickfix/) | fiches IRM, 6 étapes | s'appuie sur le triage Kongtuke |
 
