@@ -1,8 +1,8 @@
 # Cyberportofolio
 
-Portfolio de Thomas Floret, analyste SOC junior : analyses d'incidents, playbooks et travaux GRC.
+Ce portfolio a pour but de mettre en oeuvre les connaissances acquises lors de mes différentes certifications.
 
-Les analyses portent sur des environnements d'exercice publics. Les indicateurs de compromission sont neutralisés (`hxxp`, `[.]`).
+Les analyses portent des exercices issus de page publics (malware-traffic-analysis, MalwareBazaar, etc..)
 
 ## Analyses d'incidents
 
@@ -16,6 +16,3 @@ Les analyses portent sur des environnements d'exercice publics. Les indicateurs 
 | --- | --- | --- | --- |
 | 2026-09 | [Kongtuke / ClickFix : triage d'un poste infecté](malware/2026-09-11-kongtuke-clickfix/) | terminal Linux, VirusTotal | ClickFix, persistance registre, DLL side-loading |
 
-## Méthode
-
-Chaque analyse répond aux questions de l'exercice au format Question / Capture / Réponse, puis résume les IOC, les techniques MITRE ATT&CK et les recommandations. Un [modèle de rapport](templates/rapport-incident.md) plus complet sert de base.
