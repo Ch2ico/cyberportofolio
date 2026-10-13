@@ -1,6 +1,6 @@
-# Playbook : réponse à une infection ClickFix
+# Playbook : Playbook: ClickFix
 
-Ce playbook suit le modele: "IRM (CERT-SG / CERT Advens), 6 étapes"
+Ce playbook suit le modèle: "IRM (CERT-SG / CERT Advens)"
 
 ---
 
