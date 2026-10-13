@@ -9,9 +9,9 @@ Ce playbook suit le modele: "IRM (CERT-SG / CERT Advens), 6 étapes"
 | | |
 | --- | --- |
 | **Menace** | ClickFix : l'utilisateur exécute lui-même une commande malveillante copiée depuis une fausse page web |
-| **Déclencheurs** | alerte EDR ou SIEM (règles de l'étape 1), alerte proxy ou DNS (domaine de campagne ClickFix), signalement d'un utilisateur au support |
-| **Rôles** | analyste SOC N1 (étapes 2 et 3), analyste N2 (investigation, étape 4), support IT (poste), équipe réseau (blocages), RSSI et service juridique (décisions) |
-| **Version** | 1.0, AAAA-MM-JJ |
+| **Déclencheurs** | alerte EDR ou SIEM, alerte proxy ou DNS|
+| **Rôles** | analyste SOC N1, analyste N2, support IT, équipe réseau, RSSI et service juridique |
+| **Version** | 1.0, 2026-10-13 |
 
 ---
 
