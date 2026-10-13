@@ -2,8 +2,6 @@
 
 Ce portfolio a pour but de mettre en oeuvre les connaissances acquises lors de mes différentes certifications.
 
-Les analyses portent des exercices issus de page publics (malware-traffic-analysis, MalwareBazaar, etc..)
-
 ## Analyses d'incidents
 
 | Date | Analyse | Outils | Thèmes |
