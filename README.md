@@ -14,3 +14,9 @@ Ce portfolio a pour but de mettre en oeuvre les connaissances acquises lors de m
 | --- | --- | --- | --- |
 | 2026-09 | [Kongtuke / ClickFix : triage d'un poste infecté](malware/2026-09-11-kongtuke-clickfix/) | terminal Linux, VirusTotal | ClickFix, persistance registre, DLL side-loading |
 
+## Playbooks
+
+| Playbook | Modèle | Lien |
+| --- | --- | --- |
+| [Réponse à une infection ClickFix](playbooks/clickfix/) | fiches IRM, 6 étapes | s'appuie sur le triage Kongtuke |
+
