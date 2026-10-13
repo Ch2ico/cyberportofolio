@@ -1,4 +1,4 @@
-# FormBook / XLoader : identifier un poste infecté à partir d'alertes IDS
+# FormBook / XLoader : identification un poste infecté.
 
 **Exercice :** [Malware-Traffic-Analysis.net, 2026-08-09 « First to Last »](https://www.malware-traffic-analysis.net/2026/08/09/index.html)
 
