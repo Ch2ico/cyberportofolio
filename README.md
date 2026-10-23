@@ -20,3 +20,9 @@ Ce portfolio a pour but de mettre en oeuvre les connaissances acquises lors de m
 | --- | --- | --- | ---|
 | 2026-10-13 | [Kongtuke / ClickFix : réponse à une infection (Playbook)](playbooks/clickfix/) | Fiches IRM | s'appuie sur l'analyse de Kongtuke |
 
+## Homelab
+
+| Date | Pièce | Outils | Thèmes |
+| --- | --- | --- | --- |
+| 2026-10-23 | [Homelab SOC : segmentation, détection et durcissement Samba](homelab/) | OPNsense, Suricata, Zeek, Proxmox, Kali, Metasploit | VLAN, IDS, CVE-2007-2447, moindre privilège |
+
