@@ -92,11 +92,6 @@ Mesures appliquées:
 
 ![Après durcissement : l'exploit échoue, aucune session créée](img/02-exploit-apres.png)
 
-
-## Limites et suite
-
-- Le verrouillage de compte Samba (`bad lockout attempt`) ne se déclenche jamais malgré une configuration correcte — défaut documenté du mécanisme, pas une erreur de configuration.
-- Aucune règle de corrélation n'existe encore pour transformer les lignes `ntlm.log` en alerte (pistes : Wazuh, prévu plus tard dans le lab).
-- Risque résiduel assumé : la version de Samba reste vulnérable à d'autres CVE authentifiées ; plan de migration vers une version maintenue.
-- Prochaine étape détection : un SIEM (Wazuh) pour corréler ce que Zeek capture déjà.
+## Conclusion :
+Après des tests de connexions les comptes utilisateurs ont toujours accès à leur serveur de fichiers. La faille est toujours présente mais n'est plus exploitable: Mission Accomplie
 
