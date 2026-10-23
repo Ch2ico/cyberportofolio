@@ -93,5 +93,5 @@ Mesures appliquées:
 ![Après durcissement : l'exploit échoue, aucune session créée](img/02-exploit-apres.png)
 
 ## Conclusion :
-Après des tests de connexions les comptes utilisateurs ont toujours accès à leur serveur de fichiers. La faille est toujours présente mais n'est plus exploitable: Mission Accomplie
+Après des tests de connexions les utilisateurs ont toujours accès à leur serveur de fichiers. La faille est toujours présente mais n'est plus exploitable: Mission Accomplie
 
