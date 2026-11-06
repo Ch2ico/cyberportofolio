@@ -7,14 +7,14 @@ Le scénario d'attaque s'appuie sur la chaîne Kongtuke / ClickFix que j'ai anal
 
 PME fictive de quelques dizaines d'employés qui vend des piles en ligne. Le site et la base clients sont chez un hébergeur cloud. Le paiement passe par un prestataire : la PME ne stocke pas les numéros de carte (périmètre PCI DSS réduit).
 
-Socle de sécurité existant : sauvegardes régulières du site et de la base clients, MFA sur la console de l'hébergeur, pas de MFA sur le back-office du site.
+Mécanisme de sécurité existant : sauvegardes régulières du site et de la base clients, mise en place du MFA sur la console de l'hébergeur, pas de MFA sur le back-office du site.
 
 > [!NOTE]
 > Étude volontairement courte : deux sources de risque et un seul scénario lié à une attaque de type ClickFix.
 
 ## Atelier 1 : cadrage
 
-**Valeurs métier :** la vente en ligne et la gestion des données clients. L'e-réputation est traitée comme un impact : l'abîmer dégrade l'activité mais ne l'arrête pas.
+**Valeurs métier :** la vente en ligne et la gestion des données clients. L'e-réputation est traitée comme un impact : le dommage réputationel dégrade l'activité mais ne l'arrête pas.
 
 **Échelle de gravité :**
 
@@ -29,7 +29,7 @@ Socle de sécurité existant : sauvegardes régulières du site et de la base cl
 
 | Événement redouté | Gravité | Pourquoi |
 | --- | --- | --- |
-| Interruption de service | Grave | Plusieurs jours sans commande, prestataire extérieur pour relancer le site |
+| Interruption de service | Grave | Plusieurs jours sans commande, prestataire extérieur nécessaire pour relancer le site |
 | Modification des prix | Significatif | Commandes à annuler ou reprendre, sans mettre la trésorerie en péril |
 | Divulgation de la base clients | Grave | Prestataire de réponse à incident, déclaration à la CNIL, perte de confiance des clients |
 | Perte ou modification de données | Grave | Restauration depuis les sauvegardes avec un prestataire, commandes récentes perdues |
@@ -78,4 +78,4 @@ Les mesures baissent la vraisemblance, pas la gravité : si l'attaque réussit m
 
 ## Ce que j'ai appris
 
-La mise en place d'une MFA physique (FIDO2) protège contre l'hameçonnage, mais pas contre la réutilisation de cookies volés : l'attaquant peut reprendre directement la session de la victime avec ces cookies. Plus la durée de vie du cookie volé est longue, plus la MFA est fragilisée.
+La mise en place d'une MFA physique (FIDO2) protège contre le phishing, mais pas contre la réutilisation de cookies volés. En effet, L'attaquant peut contourner le MFA en se connectant directement la session ciblée avec les cookies de la victime. Ainsi plus la durée de vie du cookie volé est longue, plus le risque est élevé et plus le MFA est fragilisé.
