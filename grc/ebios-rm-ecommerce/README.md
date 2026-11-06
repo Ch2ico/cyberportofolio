@@ -7,14 +7,14 @@ Le scénario d'attaque s'appuie sur la chaîne Kongtuke / ClickFix que j'ai anal
 
 PME fictive de quelques dizaines d'employés qui vend des piles en ligne. Le site et la base clients sont chez un hébergeur cloud. Le paiement passe par un prestataire : la PME ne stocke pas les numéros de carte (périmètre PCI DSS réduit).
 
-Mécanisme de sécurité existant : sauvegardes régulières du site et de la base clients, mise en place du MFA sur la console de l'hébergeur, pas de MFA sur le back-office du site.
+Socle de sécurité : sauvegardes régulières du site et de la base clients, mise en place du MFA sur la console de l'hébergeur, pas de MFA sur le back-office du site.
 
 > [!NOTE]
 > Étude volontairement courte : deux sources de risque et un seul scénario lié à une attaque de type ClickFix.
 
 ## Atelier 1 : cadrage
 
-**Valeurs métier :** la vente en ligne et la gestion des données clients. L'e-réputation est traitée comme un impact : le dommage réputationel dégrade l'activité mais ne l'arrête pas.
+**Valeurs métier :** la vente en ligne et la gestion des données clients. L'e-réputation est traitée comme un impact : le dommage réputationnel dégrade l'activité mais ne l'arrête pas.
 
 **Échelle de gravité :**
 
@@ -65,7 +65,7 @@ Le scénario est aussi vraisemblable que sa phase la plus difficile. Il a donc d
 | Trouver | Segmentation du réseau, poste dédié à l'administration du back-office |
 | Exploiter | MFA par clé physique FIDO2 sur le back-office, sessions courtes |
 
-Mesure prioritaire si une seule est finançable : la MFA sur le back-office, parce qu'elle ferme la porte qui rend la fuite de données V3. Limite : un cookie de session volé contourne toute MFA, d'où les sessions courtes.
+Mesure prioritaire si une seule est finançable : le MFA sur le back-office, parce qu'elle ferme la porte qui rend la fuite de données V3. Limite : un cookie de session volé contourne toute MFA, d'où les sessions courtes.
 
 **Risque résiduel :**
 
@@ -78,4 +78,4 @@ Les mesures baissent la vraisemblance, pas la gravité : si l'attaque réussit m
 
 ## Ce que j'ai appris
 
-La mise en place d'une MFA physique (FIDO2) protège contre le phishing, mais pas contre la réutilisation de cookies volés. En effet, L'attaquant peut contourner le MFA en se connectant directement la session ciblée avec les cookies de la victime. Ainsi plus la durée de vie du cookie volé est longue, plus le risque est élevé et plus le MFA est fragilisé.
+La mise en place d'un MFA physique (FIDO2) protège contre le phishing, mais pas contre la réutilisation de cookies volés. En effet, l'attaquant peut contourner le MFA en se connectant directement la session ciblée avec les cookies de la victime. Ainsi plus la durée de vie du cookie volé est longue, plus le risque est élevé et plus le MFA est fragilisé.
