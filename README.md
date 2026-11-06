@@ -21,6 +21,12 @@ Ce portfolio a pour but de mettre en oeuvre les connaissances acquises lors de m
 | --- | --- | --- | ---|
 | 2026-10-13 | [Kongtuke / ClickFix : réponse à une infection (Playbook)](playbooks/clickfix/) | Fiches IRM | s'appuie sur l'analyse de Kongtuke |
 
+## GRC
+
+| Date | Pièce | Méthode | Thèmes |
+| --- | --- | --- | --- |
+| 2026-11-06 | [EBIOS RM : étude de risque d'une PME e-commerce (fictive)](grc/ebios-rm-ecommerce/) | EBIOS Risk Manager (ANSSI) | gravité, scénario ClickFix, MFA, risque résiduel |
+
 ## Homelab
 
 | Date | Pièce | Outils | Thèmes |
