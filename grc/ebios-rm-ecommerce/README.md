@@ -1,26 +1,26 @@
 # EBIOS RM : étude de risque d'une PME e-commerce (fictive)
 
 **Méthode :** [EBIOS Risk Manager](https://cyber.gouv.fr/la-methode-ebios-risk-manager) (ANSSI), 5 ateliers, version courte<br>
-Le scénario d'attaque s'appuie sur la chaîne Kongtuke / ClickFix que j'ai analysée ([triage statique](../../malware/2026-09-11-kongtuke-clickfix/), [analyse dynamique](../../malware/2026-09-11-kongtuke-dynamique/))
+Le scénario d'attaque s'appuie sur la chaîne Kongtuke / ClickFix que j'ai analysée ([triage statique](../../malware/2026-09-11-kongtuke-clickfix/), [analyse dynamique](../../malware/2026-09-11-kongtuke-dynamique/)).
 
 ## Contexte
 
-PME fictive de quelques dizaines d'employés qui vend des piles en ligne. Le site et la base clients sont chez un hébergeur cloud. Le paiement passe par un prestataire : la PME ne stocke pas les numéros de carte (Pas PCI DSS).
+PME fictive de quelques dizaines d'employés qui vend des piles en ligne. Le site et la base clients sont chez un hébergeur cloud. Le paiement passe par un prestataire : la PME ne stocke pas les numéros de carte (périmètre PCI DSS réduit).
 
 Socle de sécurité existant : sauvegardes régulières du site et de la base clients, MFA sur la console de l'hébergeur, pas de MFA sur le back-office du site.
 
 > [!NOTE]
-> Étude volontairement courte : deux sources de risque et un seul scénario lié à une attaque de type ClickFix
+> Étude volontairement courte : deux sources de risque et un seul scénario lié à une attaque de type ClickFix.
 
 ## Atelier 1 : cadrage
 
-**Valeurs métier :** la vente en ligne et la gestion des données clients. L' e-réputation est traitée comme un impact : l'abîmer dégrade mais n'arrêter pas l'activité.
+**Valeurs métier :** la vente en ligne et la gestion des données clients. L'e-réputation est traitée comme un impact : l'abîmer dégrade l'activité mais ne l'arrête pas.
 
 **Échelle de gravité :**
 
 | Niveau       | Définition                                                                                                                                                                    |
 | ------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Critique     | L'entreprise ne s'en remet pas sans aide extérieure majeure, le personnel risque de perdre leurs emplois (ex. : vente arrêtée durablement, cessation de paiement...)          |
+| Critique     | L'entreprise ne s'en remet pas sans aide extérieure majeure, les salariés risquent de perdre leur emploi (ex. : vente arrêtée durablement, cessation de paiement...)          |
 | Grave        | L'entreprise s'en sort avec de sérieuses difficultés et des moyens exceptionnels (ex. : activité paralysée plusieurs jours, prestataire de réponse à incident, prêt bancaire) |
 | Significatif | L'entreprise absorbe l'impact avec ses moyens courants (ex. : interruption de quelques heures, impact modéré sur la trésorerie)                                               |
 | Mineur       | Impact limité, sans conséquence durable                                                                                                                                       |
@@ -43,17 +43,17 @@ Socle de sécurité existant : sauvegardes régulières du site et de la base cl
 
 **Écosystème :** clients, fournisseurs connectés, hébergeur cloud, prestataire de paiement, agence web, éditeur de la plateforme e-commerce.
 
-**Scénario :** un cybercriminel cherche à obtenir une rançon. Un poste de salarié est infecté par le ClickFix et lui sert de porte d'entrée sur le réseaux d'entreprise. L'attaquant obtient un accès persistant à son poste (observé dans mon analyse). Il peut ensuite voler des identifiants, accéder au back-office du site ou au panneau d'administration de l'hébergeur pour y déployer un ransomware. L'attaquant peut mettre en place une double extorsion (exfiltration des données client et chiffrement de l'infrastructure de l'entreprise), ce scénario atteint trois événements redoutés : l'interruption de service, la divulgation des données clients et la perte de données de l'entreprise.
+**Scénario :** un cybercriminel cherche à obtenir une rançon. Un poste de salarié est infecté par ClickFix et lui sert de porte d'entrée sur le réseau d'entreprise. L'attaquant obtient un accès persistant à son poste (observé dans mon analyse). Il peut ensuite voler des identifiants, accéder au back-office du site ou au panneau d'administration de l'hébergeur pour y déployer un rançongiciel. L'attaquant peut mettre en place une double extorsion (exfiltration des données clients et chiffrement de l'infrastructure de l'entreprise). Ce scénario atteint trois événements redoutés : l'interruption de service, la divulgation des données clients et la perte de données de l'entreprise.
 
 ## Atelier 4 : scénario opérationnel
 
 | Phase | Actions | Vraisemblance |
 | --- | --- | --- |
-| Connaître | Trouver des sites vulnérables et y injecter le script (attaque opportuniste) | |
+| Connaître | Trouver des sites vulnérables et y injecter le script (attaque opportuniste) | - |
 | Rentrer (observé) | Fausse vérification, commande collée dans Win+R, installation de deux branches, contact avec le C2, persistance par la clé Run | V3 |
 | Trouver (supposé) | Vol des identifiants du poste, mouvement latéral, identifiants d'un administrateur du back-office | V3 |
 | Exploiter (supposé) | Export de la base clients par le back-office sans MFA | V3 |
-| | Chiffrement du site, qui demande de passer la MFA de la console | V2 |
+| Exploiter (suite) | Chiffrement du site, qui demande de passer la MFA de la console | V2 |
 
 Le scénario est aussi vraisemblable que sa phase la plus difficile. Il a donc deux branches : **fuite de données en V3**, **chiffrement en V2**.
 
@@ -75,3 +75,7 @@ Mesure prioritaire si une seule est finançable : la MFA sur le back-office, par
 | Chiffrement | Grave / V2 | Grave / V1 |
 
 Les mesures baissent la vraisemblance, pas la gravité : si l'attaque réussit malgré tout, l'impact reste le même. Le risque restant est accepté par la direction.
+
+## Ce que j'ai appris
+
+La mise en place d'une MFA physique (FIDO2) protège contre l'hameçonnage, mais pas contre la réutilisation de cookies volés : l'attaquant peut reprendre directement la session de la victime avec ces cookies. Plus la durée de vie du cookie volé est longue, plus la MFA est fragilisée.
