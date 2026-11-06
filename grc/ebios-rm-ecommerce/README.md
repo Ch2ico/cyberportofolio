@@ -53,7 +53,7 @@ Socle de sécurité : sauvegardes régulières du site et de la base clients, mi
 | Rentrer (observé) | Fausse vérification, commande collée dans Win+R, installation de deux branches, contact avec le C2, persistance par la clé Run | V3 |
 | Trouver (supposé) | Vol des identifiants du poste, mouvement latéral, identifiants d'un administrateur du back-office | V3 |
 | Exploiter (supposé) | Export de la base clients par le back-office sans MFA | V3 |
-| Exploiter (suite) | Chiffrement du site, qui demande de passer la MFA de la console | V2 |
+| Exploiter (suite) | Chiffrement du site, qui demande de passer le MFA de la console | V2 |
 
 Le scénario est aussi vraisemblable que sa phase la plus difficile. Il a donc deux branches : **fuite de données en V3**, **chiffrement en V2**.
 
@@ -65,7 +65,7 @@ Le scénario est aussi vraisemblable que sa phase la plus difficile. Il a donc d
 | Trouver | Segmentation du réseau, poste dédié à l'administration du back-office |
 | Exploiter | MFA par clé physique FIDO2 sur le back-office, sessions courtes |
 
-Mesure prioritaire si une seule est finançable : le MFA sur le back-office, parce qu'elle ferme la porte qui rend la fuite de données V3. Limite : un cookie de session volé contourne toute MFA, d'où les sessions courtes.
+Mesure prioritaire si une seule est finançable : le MFA sur le back-office, parce qu'il ferme la porte qui rend la fuite de données V3. Limite : un cookie de session volé contourne tout MFA, d'où les sessions courtes.
 
 **Risque résiduel :**
 
@@ -78,4 +78,4 @@ Les mesures baissent la vraisemblance, pas la gravité : si l'attaque réussit m
 
 ## Ce que j'ai appris
 
-La mise en place d'un MFA physique (FIDO2) protège contre le phishing, mais pas contre la réutilisation de cookies volés. En effet, l'attaquant peut contourner le MFA en se connectant directement la session ciblée avec les cookies de la victime. Ainsi plus la durée de vie du cookie volé est longue, plus le risque est élevé et plus le MFA est fragilisé.
+La mise en place d'un MFA physique (FIDO2) protège contre le phishing, mais pas contre la réutilisation de cookies volés. En effet, l'attaquant peut contourner le MFA en se connectant directement à la session ciblée avec les cookies de la victime. Ainsi plus la durée de vie du cookie volé est longue, plus le risque est élevé et plus le MFA est fragilisé.
