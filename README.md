@@ -1,6 +1,8 @@
 # Cyberportofolio
 
-Ce portfolio a pour but de mettre en oeuvre les connaissances acquises lors de mes différentes certifications.
+Je m'appelle Thomas Floret et je cherche un premier poste d'analyste SOC à Lyon, après une reconversion. Ce dépôt réunit mes travaux pratiques : analyses de captures réseau et de malware, un playbook de réponse à incident et une étude de risque EBIOS RM.
+
+À lire en premier : [l'analyse dynamique de Kongtuke / ClickFix](malware/2026-09-11-kongtuke-dynamique/).
 
 ## Analyses d'incidents
 
