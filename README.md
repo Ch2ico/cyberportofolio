@@ -34,4 +34,5 @@ Je m'appelle Thomas Floret et je cherche un premier poste d'analyste SOC à Lyon
 | Date | Pièce | Outils | Thèmes |
 | --- | --- | --- | --- |
 | 2026-10-23 | [Homelab SOC : segmentation, détection et durcissement Samba](homelab/) | OPNsense, Suricata, Zeek, Proxmox, Kali, Metasploit | VLAN, IDS, CVE-2007-2447, moindre privilège |
+| 2026-11-19 | [Homelab SOC : détecter un brute force NTLM avec Wazuh](homelab/wazuh/) | Wazuh, Zeek, Kali, Proxmox | SIEM, NTLM, règle de corrélation, MITRE ATT&CK |
 
